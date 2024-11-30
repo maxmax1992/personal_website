@@ -29,24 +29,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
+      <div className="w-full max-w-7xl mx-auto min-h-screen flex flex-col">
+          <div className="flex-none">
+            <Header />
+            <Separator />
+          </div>
 
-        <Header>
-        </Header>
-        <Separator />
-
-        <div className="min-h-96">
-          {children}
+          <main className="flex-1 flex items-center justify-center">
+            {children}
+          </main>
+          
+          <div className="flex-none">
+            <Separator />
+            <Footer />
+          </div>
         </div>
-
-        <Separator />
-        <Footer>
-        </Footer>
       </body>
-
     </html>
   );
 }
