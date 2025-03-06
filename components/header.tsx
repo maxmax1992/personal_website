@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export default function Header() {
-    const pathname = usePathname()
+    // const pathname = usePathname()
     
     return (
         <header className="py-4 w-full">
