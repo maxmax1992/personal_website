@@ -1,8 +1,12 @@
+"use client"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export default function Header() {
+    const pathname = usePathname()
+    
     return (
         <header className="py-4 w-full">
             <div className="container flex justify-center items-center gap-6">
@@ -31,8 +35,14 @@ export default function Header() {
                     >
                         Contact
                     </Link>
+                    <Link
+                        href="/anonymous-feedback"
+                        className={cn(buttonVariants({ variant: "ghost" }), "font-medium")}
+                    >
+                        Anonymous Feedback
+                    </Link>
                 </nav>
             </div>
         </header>
     )
-};
+}
