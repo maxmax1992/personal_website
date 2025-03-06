@@ -16,7 +16,7 @@
     "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@react-three/drei": "9.92.7",
-    "@react-three/fiber": "^9.0.0-alpha.8",
+    "@react-three/fiber": "^9.0.0-rc.10",
     "@react-three/postprocessing": "2.15.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
