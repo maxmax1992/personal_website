@@ -189,11 +189,12 @@ export default function CVPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Download CV</h2>
           <p>
-            You can download a PDF version of my CV{" "}
+            {/* You can download a PDF version of my CV{" "}
             <a href="/cv.pdf" className="text-primary underline hover:no-underline">
               here
             </a>
-            .
+            . */}
+            Coming soon...
           </p>
         </section>
       </TextContainer>

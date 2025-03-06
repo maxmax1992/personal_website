@@ -15,12 +15,12 @@ export default function Home() {
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-medium">
-          Software Developer & Engineer
+          Senior ML Engineer & Data Scientist
         </h2>
         
         <p className="text-xl text-muted-foreground max-w-2xl">
-          I create elegant solutions to complex problems. With expertise in web development, 
-          I build applications that deliver exceptional user experiences.
+          I create elegant solutions to complex problems. With expertise in ML Engineering, Data Science and Software Development.
+          I build applications that deliver exceptional results and user experiences.
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center mt-6">
