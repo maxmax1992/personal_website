@@ -70,3 +70,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .text-blur-bg {
+    @apply backdrop-blur-[3px] bg-background/5 rounded-[2rem] overflow-hidden;
+    @apply shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)];
+  }
+  
+  /* Glass panel with gradient edges */
+  .glass-panel {
+    @apply relative before:absolute before:inset-0 before:backdrop-blur-[3px] before:bg-background/5 before:rounded-[2rem] before:z-0;
+    @apply shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)];
+  }
+}

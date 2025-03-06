@@ -1,4 +1,5 @@
 import React from 'react';
+import TextContainer from '@/components/TextContainer';
 
 export const metadata = {
   title: 'Contact | Max Afteniy',
@@ -7,12 +8,14 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="container py-12">
-      <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
-      <p className="text-lg mb-8">Feel free to reach out if you&apos;d like to connect or discuss opportunities.</p>
+    <main className="container py-12 flex flex-col items-center">
+      <TextContainer className="mb-8 text-center">
+        <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
+        <p className="text-lg max-w-3xl">Feel free to reach out if you&apos;d like to connect or discuss opportunities.</p>
+      </TextContainer>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl">
+        <TextContainer className="space-y-6">
           <div>
             <h2 className="text-2xl font-semibold mb-2">Contact Information</h2>
             <p className="text-muted-foreground">The best ways to reach me:</p>
@@ -40,12 +43,12 @@ export default function ContactPage() {
               <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
             </div>
           </div>
-        </div>
+        </TextContainer>
         
-        <div>
+        <TextContainer>
           <h2 className="text-2xl font-semibold mb-4">Or send a message</h2>
           <p className="text-muted-foreground mb-4">A contact form will be implemented here soon.</p>
-        </div>
+        </TextContainer>
       </div>
     </main>
   );

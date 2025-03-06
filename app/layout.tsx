@@ -37,7 +37,7 @@ export default function RootLayout({
         <BackgroundWrapper />
         
         <div className="w-full mx-auto min-h-screen flex flex-col">
-          <div className="flex-none">
+          <div className="flex-none backdrop-blur-xs bg-background/2 z-10">
             <Header />
             <Separator />
           </div>
@@ -46,7 +46,7 @@ export default function RootLayout({
             {children}
           </main>
           
-          <div className="flex-none">
+          <div className="flex-none backdrop-blur-xs bg-background/2 z-10">
             <Separator />
             <Footer />
           </div>

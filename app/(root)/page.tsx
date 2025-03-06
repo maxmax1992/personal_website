@@ -4,11 +4,12 @@
 // import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import TextContainer from "@/components/TextContainer";
 
 export default function Home() {
   return (
     <div className="w-full max-w-5xl px-4 py-20 relative z-10">
-      <div className="flex flex-col gap-8 items-center text-center">
+      <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
           <span className="text-primary">Max Afteniy</span>
         </h1>
@@ -24,14 +25,14 @@ export default function Home() {
         
         <div className="flex flex-wrap gap-4 justify-center mt-6">
           <Button asChild size="lg">
-            <Link href="/projects">View My Work</Link>
+            <Link href="/cv">View My CV</Link>
           </Button>
           
           <Button variant="outline" asChild size="lg">
             <Link href="/contact">Get In Touch</Link>
           </Button>
         </div>
-      </div>
+      </TextContainer>
     </div>
   );
 }
