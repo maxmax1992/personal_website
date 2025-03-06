@@ -1,11 +1,9 @@
 "use client"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export default function Header() {
-    // const pathname = usePathname()
     
     return (
         <header className="py-4 w-full">
