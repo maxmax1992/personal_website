@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <div className="py-6 flex flex-row items-center justify-center gap-8">
             <Link 
-                href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" 
+                href="https://linkedin.com/in/maxim-afteniy" 
                 target="_blank"
                 className="hover:text-primary transition-colors"
             >

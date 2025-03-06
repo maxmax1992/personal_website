@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graph with Oscillatory Triangle Segments</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    #bgCanvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<script>
+  // --- CANVAS SETUP ---
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+  window.addEventListener('resize', resizeCanvas, false);
+  resizeCanvas();
+
+  // --- GLOBAL CONSTANTS & VARIABLES ---
+  const numNodes = 60;
+  const nodes = [];
+  const maxNodeDist = 300;    // distance threshold for node-to-node line fading
+  const maxCursorDist = 350;  // distance threshold for cursor-related effects
+
+  // Track mouse position
+  let mouseX = -9999, mouseY = -9999;
+  canvas.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // --- INTENSITY FUNCTIONS ---
+
+  // For drawing the lines between nodes
+  function intensityFunction(dist, maxDist) {
+    if (dist >= maxDist) return 0;
+    return (Math.cos((dist / maxDist) * Math.PI) + 1) / 2;
+  }
+
+  // Custom oscillatory intensity function (using a sum of sine waves)
+  // Returns a value between 0 and 1 based on the distance from the cursor.
+  function customIntensity(r, maxR) {
+    const normalized = r / maxR; // value in [0, 1]
+    let value = 0.5 
+              + 0.25 * Math.sin(normalized * Math.PI * 4) 
+              + 0.25 * Math.sin(normalized * Math.PI * 8);
+    return Math.max(0, Math.min(1, value));
+  }
+
+  // --- NODE INITIALIZATION ---
+  function rand(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  for (let i = 0; i < numNodes; i++) {
+    nodes.push({
+      x: rand(0, width),
+      y: rand(0, height),
+      vx: rand(-0.5, 0.5),
+      vy: rand(-0.5, 0.5)
+    });
+  }
+
+  // --- UPDATE NODE POSITIONS ---
+  function updateNodes() {
+    for (let i = 0; i < numNodes; i++) {
+      const n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
+      // Bounce off canvas edges
+      if (n.x < 0) {
+        n.x = 0;
+        n.vx *= -1;
+      } else if (n.x > width) {
+        n.x = width;
+        n.vx *= -1;
+      }
+      if (n.y < 0) {
+        n.y = 0;
+        n.vy *= -1;
+      } else if (n.y > height) {
+        n.y = height;
+        n.vy *= -1;
+      }
+    }
+  }
+
+  // --- DRAW TRIANGLES AROUND THE CURSOR ---
+  // This function collects candidate nodes (within maxCursorDist), sorts them by angle,
+  // and then draws a triangle between the cursor and every adjacent pair.
+  // Each triangle’s fill color is computed via customIntensity (using the triangle’s centroid distance).
+  function drawCursorTriangles() {
+    // Only process if the mouse is in the canvas.
+    if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) {
+      return;
+    }
+
+    const candidates = [];
+    for (let i = 0; i < numNodes; i++) {
+      const n = nodes[i];
+      const dx = n.x - mouseX;
+      const dy = n.y - mouseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < maxCursorDist) {
+        const angle = Math.atan2(dy, dx);
+        candidates.push({ node: n, angle, dist });
+      }
+    }
+    if (candidates.length < 2) return;
+
+    // Sort candidate nodes by their angle relative to the cursor.
+    candidates.sort((a, b) => a.angle - b.angle);
+
+    // For every adjacent pair (with wrap-around), draw a triangle.
+    for (let i = 0; i < candidates.length; i++) {
+      const c1 = candidates[i];
+      const c2 = candidates[(i + 1) % candidates.length]; // wrap-around
+
+      // Compute the centroid of the triangle (cursor, c1, c2)
+      const centroidX = (mouseX + c1.node.x + c2.node.x) / 3;
+      const centroidY = (mouseY + c1.node.y + c2.node.y) / 3;
+      const centroidDist = Math.sqrt((centroidX - mouseX) ** 2 + (centroidY - mouseY) ** 2);
+
+      // Determine the triangle’s intensity from the custom oscillatory function.
+      const intensity = customIntensity(centroidDist, maxCursorDist);
+      const colorVal = Math.round(intensity * 255); // map intensity to grayscale [0,255]
+
+      ctx.beginPath();
+      ctx.moveTo(mouseX, mouseY);
+      ctx.lineTo(c1.node.x, c1.node.y);
+      ctx.lineTo(c2.node.x, c2.node.y);
+      ctx.closePath();
+      // Fill with an opaque color (no alpha) computed from the sin function.
+      ctx.fillStyle = `rgb(${colorVal}, ${colorVal}, ${colorVal})`;
+      ctx.fill();
+    }
+  }
+
+  // --- MAIN DRAW LOOP ---
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    updateNodes();
+
+    // 1) Draw fully connected lines between every pair of nodes.
+    for (let i = 0; i < numNodes; i++) {
+      const n1 = nodes[i];
+      for (let j = i + 1; j < numNodes; j++) {
+        const n2 = nodes[j];
+        const dx = n1.x - n2.x;
+        const dy = n1.y - n2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const alpha = intensityFunction(dist, maxNodeDist);
+        if (alpha > 0) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.moveTo(n1.x, n1.y);
+          ctx.lineTo(n2.x, n2.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // 2) Draw lines from the cursor to every node.
+    if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+      for (let i = 0; i < numNodes; i++) {
+        const n = nodes[i];
+        const dx = mouseX - n.x;
+        const dy = mouseY - n.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const alpha = intensityFunction(dist, maxCursorDist);
+        if (alpha > 0) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.moveTo(mouseX, mouseY);
+          ctx.lineTo(n.x, n.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // 3) Draw the colored triangles (each with its color determined from the sin-based function).
+    drawCursorTriangles();
+
+    // 4) Draw the nodes on top.
+    for (let i = 0; i < numNodes; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = "#FFFFFF";
+      ctx.arc(nodes[i].x, nodes[i].y, 2, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+</body>
+</html>
