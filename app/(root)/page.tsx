@@ -12,6 +12,7 @@ export default function Home() {
       <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
           <span className="text-primary">Max Afteniy</span>
+
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-medium">
