@@ -21,6 +21,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Max Afteniy | Portfolio",
   description: "Personal website and portfolio of Max Afteniy",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({
@@ -42,7 +43,7 @@ export default function RootLayout({
             <Separator />
           </div>
 
-          <main className="flex-1 flex items-center justify-center">
+          <main className="flex-1 flex items-center justify-center p-4 sm:p-6">
             {children}
           </main>
           

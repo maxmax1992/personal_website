@@ -3,8 +3,8 @@ import TextContainer from "@/components/TextContainer";
 
 export default function AnonymousFeedback() {
   return (
-    <div className="w-full max-w-5xl px-4 py-12 relative z-10">
-      <TextContainer>
+    <div className="w-full max-w-5xl px-4 py-12 relative z-[5]">
+      {/* <TextContainer>
         <h1 className="text-4xl font-bold mb-8 tracking-tight">Anonymous Feedback</h1>
         
         <p className="text-muted-foreground mb-6">
@@ -42,7 +42,7 @@ export default function AnonymousFeedback() {
             </Button>
           </div>
         </div>
-      </TextContainer>
+      </TextContainer> */}
     </div>
   );
 } 

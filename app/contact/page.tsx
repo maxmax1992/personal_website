@@ -8,13 +8,15 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="container py-12 flex flex-col items-center">
-      <TextContainer className="mb-8 text-center">
+    <div className="w-full max-w-5xl px-4 py-20 relative z-[5]">
+      <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
-        <p className="text-lg max-w-3xl">Feel free to reach out if you&apos;d like to connect or discuss opportunities.</p>
+        <p className="text-xl text-muted-foreground max-w-2xl">
+          Feel free to reach out if you'd like to connect or discuss opportunities.
+        </p>
       </TextContainer>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
         <TextContainer className="space-y-6">
           <div>
             <h2 className="text-2xl font-semibold mb-2">Contact Information</h2>
@@ -27,7 +29,6 @@ export default function ContactPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span>Email: maxim.afteniy ( at ) gmail.com</span>
-              {/* <span>maxim.afteniy\< at \> gmail.com</span> */}
             </div>
             
             <div className="flex items-center">
@@ -51,6 +52,6 @@ export default function ContactPage() {
           <p className="text-muted-foreground mb-4">Coming soon...</p>
         </TextContainer>
       </div>
-    </main>
+    </div>
   );
 } 

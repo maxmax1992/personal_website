@@ -8,7 +8,7 @@ import TextContainer from "@/components/TextContainer";
 
 export default function Home() {
   return (
-    <div className="w-full max-w-5xl px-4 py-20 relative z-10">
+    <div className="w-full max-w-5xl px-4 py-20 relative z-[5]">
       <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
           <span className="text-primary">Max Afteniy</span>

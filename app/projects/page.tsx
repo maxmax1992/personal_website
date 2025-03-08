@@ -17,22 +17,24 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="container py-12 flex flex-col items-center">
-      <TextContainer className="mb-8 text-center">
+    <div className="w-full max-w-5xl px-4 py-20 relative z-[5]">
+      <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-4xl font-bold mb-6">My Projects</h1>
-        <p className="text-lg max-w-3xl">Here are some of the projects I&apos;ve worked on. This page is under construction.</p>
+        <p className="text-xl text-muted-foreground max-w-2xl">
+          Here are some of the projects I&apos;ve worked on. This page is under construction.
+        </p>
       </TextContainer>
       
-      <div className={`grid gap-6 w-full max-w-4xl ${projects.length === 1 ? 'place-items-center' : 'grid-cols-1 md:grid-cols-2'}`}>
+      <div className="mt-12 grid gap-6 w-full place-items-center">
         {/* Render projects dynamically */}
         {projects.map((project, index) => (
-          <TextContainer key={index} className={`${projects.length === 1 ? 'max-w-md w-full' : ''}`}>
+          <TextContainer key={index} className="max-w-md w-full">
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
             <p className="text-muted-foreground mb-4">{project.description}</p>
             <p>{project.content}</p>
           </TextContainer>
         ))}
       </div>
-    </main>
+    </div>
   );
 } 
