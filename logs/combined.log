@@ -1,0 +1,69 @@
+2025-03-08 11:57:14 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 11:57:14 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 11:57:14 info: Sending contact form email {"service":"personal-website","name":"asd","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":20}
+2025-03-08 11:57:14 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 11:57:14 info: Using configured SMTP server {"service":"personal-website"}
+2025-03-08 11:57:14 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:57:14 error: Failed to send email {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-30c011d2830sm1739881fa.80 - gsmtp","responseCode":535,"command":"AUTH PLAIN"},"to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:57:14 error: Failed to process contact form submission {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-30c011d2830sm1739881fa.80 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}}
+2025-03-08 11:58:01 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 11:58:01 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 11:58:01 info: Sending contact form email {"service":"personal-website","name":"asd","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":20}
+2025-03-08 11:58:01 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 11:58:01 info: Using configured SMTP server {"service":"personal-website","host":"smtp.gmail.com"}
+2025-03-08 11:58:01 info: Using Gmail SMTP configuration {"service":"personal-website"}
+2025-03-08 11:58:01 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:58:01 error: Failed to send email {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498ae461d4sm775097e87.6 - gsmtp","responseCode":535,"command":"AUTH PLAIN"},"to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:58:01 error: Failed to process contact form submission {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498ae461d4sm775097e87.6 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}}
+2025-03-08 11:58:15 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 11:58:15 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 11:58:15 info: Sending contact form email {"service":"personal-website","name":"asd","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":13}
+2025-03-08 11:58:15 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 11:58:15 info: Using configured SMTP server {"service":"personal-website","host":"smtp.gmail.com"}
+2025-03-08 11:58:15 info: Using Gmail SMTP configuration {"service":"personal-website"}
+2025-03-08 11:58:15 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:58:15 error: Failed to send email {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-30be99e8401sm8507731fa.96 - gsmtp","responseCode":535,"command":"AUTH PLAIN"},"to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:58:15 error: Failed to process contact form submission {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-30be99e8401sm8507731fa.96 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}}
+2025-03-08 11:59:05 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 11:59:05 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 11:59:05 info: Sending contact form email {"service":"personal-website","name":"asd","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":13}
+2025-03-08 11:59:05 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 11:59:05 info: Using configured SMTP server {"service":"personal-website","host":"smtp.gmail.com"}
+2025-03-08 11:59:05 info: Using Gmail SMTP configuration {"service":"personal-website"}
+2025-03-08 11:59:05 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:59:05 error: Failed to send email {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498ae4620asm769086e87.13 - gsmtp","responseCode":535,"command":"AUTH PLAIN"},"to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:59:05 error: Failed to process contact form submission {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498ae4620asm769086e87.13 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}}
+2025-03-08 11:59:41 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 11:59:41 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 11:59:41 info: Sending contact form email {"service":"personal-website","name":"asd","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":13}
+2025-03-08 11:59:41 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 11:59:41 info: Using configured SMTP server {"service":"personal-website","host":"smtp.gmail.com"}
+2025-03-08 11:59:41 info: Using Gmail SMTP configuration {"service":"personal-website"}
+2025-03-08 11:59:41 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:59:41 error: Failed to send email {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498b1c33b3sm757395e87.229 - gsmtp","responseCode":535,"command":"AUTH PLAIN"},"to":"maxim.afteniy@gmail.com","subject":"New message from asd via your website"}
+2025-03-08 11:59:41 error: Failed to process contact form submission {"service":"personal-website","error":{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5498b1c33b3sm757395e87.229 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}}
+2025-03-08 12:00:24 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 12:00:24 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 12:00:24 info: Sending contact form email {"service":"personal-website","name":"max","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":12}
+2025-03-08 12:00:24 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 12:00:24 info: Using configured SMTP server {"service":"personal-website","host":"smtp.gmail.com"}
+2025-03-08 12:00:24 info: Using Gmail SMTP configuration {"service":"personal-website"}
+2025-03-08 12:00:24 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from max via your website"}
+2025-03-08 12:00:26 info: Email sent successfully {"service":"personal-website","messageId":"<6275f6cf-97c6-b5ad-9f9f-dc3ddbfc19e7@gmail.com>","previewUrl":false}
+2025-03-08 12:00:26 info: Email sent successfully {"service":"personal-website","messageId":"<6275f6cf-97c6-b5ad-9f9f-dc3ddbfc19e7@gmail.com>"}
+2025-03-08 12:03:37 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 12:03:37 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 12:03:37 info: Sending contact form email {"service":"personal-website","name":"Maxim","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":18}
+2025-03-08 12:03:37 info: Sending contact form message {"service":"personal-website","from":"maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 12:03:37 info: Using configured SMTP server {"service":"personal-website"}
+2025-03-08 12:03:37 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from Maxim via your website"}
+2025-03-08 12:03:38 info: Email sent successfully {"service":"personal-website","messageId":"<b1b3d364-d577-27b1-4055-2398f96c0edb@gmail.com>","previewUrl":false}
+2025-03-08 12:03:38 info: Email sent successfully {"service":"personal-website","messageId":"<b1b3d364-d577-27b1-4055-2398f96c0edb@gmail.com>"}
+2025-03-08 12:08:17 info: Received contact form submission {"service":"personal-website"}
+2025-03-08 12:08:17 debug: Environment variables available: {"service":"personal-website","CONTACT_EMAIL":"set","NODE_ENV":"development"}
+2025-03-08 12:08:17 info: Sending contact form email {"service":"personal-website","name":"Max","from":"Maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com","messageLength":18}
+2025-03-08 12:08:17 info: Sending contact form message {"service":"personal-website","from":"Maxim.afteniy@gmail.com","to":"maxim.afteniy@gmail.com"}
+2025-03-08 12:08:17 info: Using configured SMTP server {"service":"personal-website"}
+2025-03-08 12:08:17 info: Sending email {"service":"personal-website","to":"maxim.afteniy@gmail.com","subject":"New message from Max via your website"}
+2025-03-08 12:08:19 info: Email sent successfully {"service":"personal-website","messageId":"<0716ea9f-5131-8cd1-39ea-e73f4a1f5b69@gmail.com>","previewUrl":false}
+2025-03-08 12:08:19 info: Email sent successfully {"service":"personal-website","messageId":"<0716ea9f-5131-8cd1-39ea-e73f4a1f5b69@gmail.com>"}

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Separator } from "@/components/ui/separator"
 
 import localFont from "next/font/local";
@@ -21,7 +21,12 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Max Afteniy | Portfolio",
   description: "Personal website and portfolio of Max Afteniy",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

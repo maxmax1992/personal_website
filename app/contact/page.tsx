@@ -1,7 +1,9 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import TextContainer from '@/components/TextContainer';
+import ContactForm from '@/components/ContactForm';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Contact | Max Afteniy',
   description: 'Get in touch with Max Afteniy',
 }
@@ -49,7 +51,7 @@ export default function ContactPage() {
         
         <TextContainer>
           <h2 className="text-2xl font-semibold mb-4">Or send a message</h2>
-          <p className="text-muted-foreground mb-4">Coming soon...</p>
+          <ContactForm />
         </TextContainer>
       </div>
     </div>
