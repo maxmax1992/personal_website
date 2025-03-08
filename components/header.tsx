@@ -35,9 +35,9 @@ export default function Header() {
     ]
     
     return (
-        <header className="py-4 w-full relative z-[999]">
-            <div className="container mx-auto px-4">
-                <div className="relative flex items-center max-w-none">
+        <header className="py-4 w-full relative z-[999] h-16">
+            <div className="container mx-auto px-4 h-full">
+                <div className="relative flex items-center justify-center h-full max-w-none">
                     {/* Mobile menu toggle */}
                     <button 
                         className="md:hidden p-2 z-[999] absolute left-0"
@@ -62,7 +62,7 @@ export default function Header() {
                     
                     {/* Mobile navigation overlay */}
                     {isMenuOpen && (
-                        <div className="fixed top-16 left-0 right-0 bg-background/95 backdrop-blur-sm z-[998] flex flex-col items-center md:hidden rounded-b-lg shadow-lg border-t">
+                        <div className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm z-[998] flex flex-col items-center md:hidden rounded-b-lg shadow-lg">
                             <nav className="flex flex-col items-center gap-4 py-4 w-full">
                                 {navItems.map((item) => (
                                     <Link
