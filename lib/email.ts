@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import logger from './logger';
 
 interface EmailOptions {
   to: string;
@@ -13,7 +12,18 @@ interface EmailOptions {
 const createTransporter = async () => {
   // Use environment variables if available
   if (process.env.EMAIL_SMTP_HOST && process.env.EMAIL_SMTP_PORT) {
-    logger.info('Using configured SMTP server');
+    // For Gmail specifically
+    if (process.env.EMAIL_SMTP_HOST.includes('gmail')) {
+      return nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_SMTP_USER,
+          pass: process.env.EMAIL_SMTP_PASSWORD,
+        },
+      });
+    }
+    
+    // For other SMTP servers
     return nodemailer.createTransport({
       host: process.env.EMAIL_SMTP_HOST,
       port: parseInt(process.env.EMAIL_SMTP_PORT || '587', 10),
@@ -26,9 +36,7 @@ const createTransporter = async () => {
   }
 
   // If no SMTP config provided, use Ethereal for testing
-  logger.info('No SMTP configuration found, using Ethereal for testing');
   const testAccount = await nodemailer.createTestAccount();
-  logger.info('Created test account', { testAccount });
   
   return nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -47,8 +55,6 @@ export const sendEmail = async ({ to, subject, text, html }: EmailOptions) => {
     
     const from = process.env.EMAIL_FROM || `"Your Website" <${process.env.CONTACT_EMAIL}>`;
     
-    logger.info('Sending email', { to, subject });
-    
     const info = await transporter.sendMail({
       from,
       to,
@@ -57,18 +63,12 @@ export const sendEmail = async ({ to, subject, text, html }: EmailOptions) => {
       html: html || text,
     });
     
-    logger.info('Email sent successfully', {
-      messageId: info.messageId,
-      previewUrl: nodemailer.getTestMessageUrl(info),
-    });
-    
     return {
       success: true,
       messageId: info.messageId,
       previewUrl: nodemailer.getTestMessageUrl(info),
     };
   } catch (error) {
-    logger.error('Failed to send email', { error, to, subject });
     throw error;
   }
 };
@@ -77,9 +77,7 @@ export const sendContactFormEmail = async (
   recipientEmail: string,
   { name, email, message }: { name: string; email: string; message: string }
 ) => {
-  logger.info('Sending contact form message', { from: email, to: recipientEmail });
-  
-  const subject = `New message from ${name} via your website`;
+  const subject = `[Website Contact Form] New message from ${name}`;
   
   const text = `
 Name: ${name}
@@ -109,11 +107,19 @@ ${message}
   </p>
 </div>
   `;
-  
-  return sendEmail({
+
+  // Add debugging information to help track email delivery
+  const options: any = {
     to: recipientEmail,
     subject,
     text,
     html,
-  });
+  };
+  
+  // Add CC if in development mode to help with troubleshooting
+  if (process.env.NODE_ENV === 'development' && process.env.DEBUG_CC_EMAIL) {
+    options.cc = process.env.DEBUG_CC_EMAIL;
+  }
+  
+  return sendEmail(options);
 }; 

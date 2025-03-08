@@ -37,7 +37,7 @@ export default function Header() {
     return (
         <header className="py-4 w-full relative z-[999]">
             <div className="container mx-auto px-4">
-                <div className="relative flex items-center">
+                <div className="relative flex items-center max-w-none">
                     {/* Mobile menu toggle */}
                     <button 
                         className="md:hidden p-2 z-[999] absolute left-0"
