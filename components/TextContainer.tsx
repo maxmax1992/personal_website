@@ -11,7 +11,7 @@ export default function TextContainer({ children, className }: TextContainerProp
     <div className={cn(
       "relative backdrop-blur-[4px] bg-background/5 rounded-[1rem] sm:rounded-[2rem] p-4 sm:p-6 overflow-hidden w-full max-w-full sm:max-w-none",
       "shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)]",
-      "mx-4 sm:mx-0",
+      "m-0",
       className
     )}>
       {/* Inner content with gradual edge blur */}

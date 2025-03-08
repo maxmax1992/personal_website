@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CVPage() {
   return (
-    <div className="container py-2">
+    <div className="container py-2 m-0">
       <TextContainer className="p-0 rounded-lg overflow-hidden">
         <div className="min-h-[2250px]">
           <iframe

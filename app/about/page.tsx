@@ -21,7 +21,7 @@ import {
 
 export default function About() {
     return (
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col gap-4 items-center m-0">
             <Card className="w-[350px]">
                 <CardHeader>
                     <CardTitle>Create project</CardTitle>

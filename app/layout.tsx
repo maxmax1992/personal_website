@@ -42,13 +42,13 @@ export default function RootLayout({
         {/* 3D Network Background */}
         <BackgroundWrapper />
         
-        <div className="w-full mx-auto min-h-screen flex flex-col">
+        <div className="w-full mx-auto min-h-screen flex flex-col m-0">
           <div className="flex-none backdrop-blur-xs bg-background/2 z-10">
             <Header />
             <Separator />
           </div>
 
-          <main className="flex-1 flex items-center justify-center p-4 sm:p-6">
+          <main className="flex-1 flex items-center justify-center p-4 sm:p-6 m-0">
             {children}
           </main>
           
