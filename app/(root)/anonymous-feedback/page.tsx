@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import TextContainer from "@/components/TextContainer";
-
 export default function AnonymousFeedback() {
   return (
     <div className="w-full max-w-5xl px-4 py-12 relative z-[5]">

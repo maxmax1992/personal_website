@@ -14,7 +14,7 @@ export default function ContactPage() {
       <TextContainer className="flex flex-col gap-8 items-center text-center">
         <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
         <p className="text-xl text-muted-foreground max-w-2xl">
-          Feel free to reach out if you'd like to connect or discuss opportunities.
+          Feel free to reach out if you&apos;d like to connect or discuss opportunities.
         </p>
       </TextContainer>
       

@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(responseData);
     
-  } catch (error) {
+  } catch (_) {
     return NextResponse.json(
       { error: 'Failed to send message. Please try again later.' },
       { status: 500 }

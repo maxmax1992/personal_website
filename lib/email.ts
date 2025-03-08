@@ -5,6 +5,7 @@ interface EmailOptions {
   subject: string;
   text: string;
   html?: string;
+  cc?: string;
 }
 
 // For development, use an Ethereal test account
@@ -109,7 +110,7 @@ ${message}
   `;
 
   // Add debugging information to help track email delivery
-  const options: any = {
+  const options: EmailOptions = {
     to: recipientEmail,
     subject,
     text,
