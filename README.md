@@ -1,5 +1,5 @@
 
-# WIP
+# [maximafteniy.com](www.maximafteniy.com)
 
 ## Deployed website 
 [Here](https://personal-website-iota-one-99.vercel.app/)
