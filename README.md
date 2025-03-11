@@ -1,8 +1,8 @@
 
-# [maximafteniy.com](www.maximafteniy.com)
+# Personal website
 
 ## Deployed website 
-[Here](https://personal-website-iota-one-99.vercel.app/)
+[Here](www.maximafteniy.com)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
